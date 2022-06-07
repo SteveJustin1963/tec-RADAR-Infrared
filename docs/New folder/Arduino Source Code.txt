@@ -1,0 +1,24 @@
+Arduino Source Code
+Characteristic Measurement
+
+void setup()
+{
+  Serial.begin(115200);
+}
+ 
+void loop()
+{
+  float adcVal;
+   
+   Read sharp sensor analog value and use a simple filter on it
+  adcVal = 0.0f;
+  for (int i = 0; i  50; i++)
+  {
+    adcVal += analogRead(PA0);
+    delay(10);
+  }
+  adcVal = 50.0f;
+ 
+   Print ADC Value
+  Serial.println(adcVal);
+}

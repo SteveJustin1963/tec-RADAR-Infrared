@@ -1,0 +1,37 @@
+; I used these pairs in the code to get the correct distance with Linear Interpolation .
+
+
+ Structure to store ADC Value - Distance pairs
+typedef struct {
+  float distance;
+  float adcVal;
+} S_DIST_ADC_MAP;
+ 
+ ADC Value - Distance pairs
+ Fill it measured SHARP Sensor characteristic values.
+S_DIST_ADC_MAP distAdcMap[] = {
+  {12,  3599},
+  {20,  3122},
+  {30,  2295},
+  {40,  1733},
+  ...
+};
+ 
+ Function to get distance [cm] from measured ADC Value
+float getDistance(float adcVal)
+{
+  float distance = DISTANCE_MAX;
+ 
+   Linear interpolation from measured ADC value and MAP.
+  for (int i = 1; i  (sizeof(distAdcMap)sizeof(S_DIST_ADC_MAP)); i++)
+  {
+    if (adcVal  distAdcMap[i].adcVal)
+    {
+      float factor = (adcVal - distAdcMap[i].adcVal)(distAdcMap[i-1].adcVal - distAdcMap[i].adcVal);
+      distance = factor  (distAdcMap[i-1].distance - distAdcMap[i].distance) + distAdcMap[i].distance;
+      break;
+    }
+  }
+ 
+  return distance;
+}

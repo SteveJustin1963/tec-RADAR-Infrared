@@ -1,10 +1,11 @@
 # tec-RADAR-Infrared
 
- infrared sensor
- - Sharp GP2Y0A02
+## infrared sensor
+- HC-SR04
+- Sharp GP2Y0A02
 - SEN0259
 
-sweep motor
+## sweep motor
 - servo
 
 

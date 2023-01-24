@@ -2,8 +2,16 @@
 
 ## infrared sensor
 - HC-SR04
+![image](https://user-images.githubusercontent.com/58069246/214206262-d15646f3-065e-4e99-b2a0-1c896be40d84.png)
+
+
 - Sharp GP2Y0A02
+![image](https://user-images.githubusercontent.com/58069246/214206325-188a5a42-1eb9-465b-9468-700e0264729c.png)
+
+
 - SEN0259
+![image](https://user-images.githubusercontent.com/58069246/214206350-e7888a2f-972c-4717-b820-ccebfe75061e.png)
+
 
 ## sweep motor
 - servo
